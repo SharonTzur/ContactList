@@ -1,0 +1,15 @@
+<div class="contact-wrap">
+  <div class="contact-name">
+   Name:  {{contactDetails.name}}
+  </div>
+  <div class="contact-phone">
+    Phone : {{contactDetails.phone}}
+  </div>
+  <div class="contact-email">
+    Email : {{contactDetails.email}}
+  </div>
+  <div class="favourite-indicator">
+    <input type="checkbox" [checked]="contactDetails.isFavourite" ([ngModel])="contactDetails.isFavourite" (change)="contactDetails.isFavourite = !contactDetails.isFavourite">
+
+  </div>
+</div>
