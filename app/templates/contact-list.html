@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--
+this is the form for adding a new contact.
+the [(ngModel)] attribute is two-way-binding, so it saves the value of the input in the specified variable.
+we told angular that on click event on te button, "addContact" function should run.
+-->
 
-</body>
-</html>
+<div class="add-contact-form">
+  Name : <input type="text" [(ngModel)]="newName">
+  Phone : <input type="text" [(ngModel)]="newPhone">
+  Email : <input type="text" [(ngModel)]="newEmail">
+  <button (click)="addContact()">Add Contact</button>
+</div>
+
+
+<h2>Favourites ! :</h2>
+<!--
+We are printing a "contact-fav" component for each contact object in our contact array.
+we are passing the specific current info of the contact to the component, using the [contactDetails] attribute.
+remember this will not work unless we have @Input() in the child component.
+-->
+<contact-fav *ngFor="let contact of contactsArr"  [contactDetails]="contact"></contact-fav>
+
+<h2>Contacts : </h2>
+<!--
+We are printing a "contact-item" component for each contact object in our contact array.
+we are passing the specific current info of the contact to the component, using the [contactDetails] attribute.
+remember this will not work unless we have @Input() in the child component.
+-->
+<contact-item *ngFor="let contact of contactsArr" [contactDetails]="contact"></contact-item>
+

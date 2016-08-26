@@ -1,6 +1,24 @@
-<div class="add-contact-form">
+<!--we are printing the contact data-->
 
-
+<div class="contact-wrap">
+  <div class="contact-name">
+   Name:  {{contactDetails.name}}
+  </div>
+  <div class="contact-phone">
+    Phone : {{contactDetails.phone}}
+  </div>
+  <div class="contact-email">
+    Email : {{contactDetails.email}}
+  </div>
+  <div class="favourite-indicator">
+    <!--
+    this checkbox represents the state of this contact  is it a favourite or not.
+    the [checked] property gets this value and shows a tick if it's true, and empty if not.
+    the (change) property tells the contact object itself to change this value if the checkbox is clicked.
+    if it's true it becomes false and the opposite.
+    -->
+    <input type="checkbox"
+           [checked]="contactDetails.isFavourite"
+           (change)="contactDetails.isFavourite = !contactDetails.isFavourite">
+  </div>
 </div>
-<h2>Contacts : </h2>
-<contact-item *ngFor="let contact of contactList" [contactDetails]="contact"></contact-item>

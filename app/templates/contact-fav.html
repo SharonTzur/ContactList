@@ -1,4 +1,9 @@
-<div class="contact-wrap">
+<!--we are printing the contact data
+notice the *ngIf property - it tells angular to only print this item if the statement is true.
+if "contactDetails.isFavourite" is true, it will be printed, otherwise it won't.
+-->
+
+<div *ngIf="contactDetails.isFavourite" class="fav-contact-wrap" >
   <div class="contact-name">
    Name:  {{contactDetails.name}}
   </div>
@@ -7,9 +12,5 @@
   </div>
   <div class="contact-email">
     Email : {{contactDetails.email}}
-  </div>
-  <div class="favourite-indicator">
-    <input type="checkbox" [checked]="contactDetails.isFavourite" ([ngModel])="contactDetails.isFavourite" (change)="contactDetails.isFavourite = !contactDetails.isFavourite">
-
   </div>
 </div>

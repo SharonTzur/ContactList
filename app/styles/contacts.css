@@ -1,0 +1,29 @@
+.contact-wrap{
+
+  background-color: lightcyan;
+  padding: 2%;
+  font-size:18px;
+  color:black;
+  border : 2px solid black;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+.fav-contact-wrap{
+
+  background-color: lightpink;
+  padding: 2%;
+  font-size:18px;
+  color:black;
+  border : 2px solid black;
+  border-radius:15px;
+  margin-bottom:20px;
+  width: 200px;
+  display:inline-block;
+}
+.favourite-indicator input{
+  float:right;
+  zoom: 4;
+position:relative;
+  bottom: 15px;
+}
